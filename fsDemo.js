@@ -25,8 +25,6 @@ const readFile=async()=>{
     }
 }
 
-
-
 const writeFile = async ()=>{
     try {
         await fs.writeFile('./public/text.txt','Hello,i AM WRITING TO YOU');

@@ -23,22 +23,23 @@ try{
             // res.writeHead(200,{'Content-Type':'text/html'});
             //     res.end('<h1>Home Page!</h1>');
             filePath=path.join(__dirname,'public','index.html')
-            } else if(req.url === '/about'){
+        } else if(req.url === '/about'){
                 // res.writeHead(200,{'Content-Type':'text/html'});
                 // res.end('<h1>About</h1>');
                 filePath=path.join(__dirname,'public','about.html')
-            }
+        }
             else{
                 // res.writeHead(404,{'Content-Type':'text/html'});
                 // res.end('<h1>Not Found!</h1>');
                 filePath=path.join(__dirname,'public','notFound.html')
-            }
+        }
         const data=await fs.readFile(filePath);
         //what type of data are we adding
         res.setHeader('Content-Type','text/html');
         res.write(data);
         res.end();    
-    }else{
+    }
+    else{
         throw new Error('Method not allowed');
     }
 }
